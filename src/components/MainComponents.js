@@ -21,7 +21,8 @@ export const PageBody = styled.div``;
 
 
 export const  ErrorMessage = styled.div`
-    margin:10px;
+    margin:10px 0;
+    padding:10px;
     background-color:#ffcaca;
     color:#000;
     border:2px solid #ff0000;

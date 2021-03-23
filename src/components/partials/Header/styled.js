@@ -30,13 +30,13 @@ a{
     }
 
     .logo-1{
-        color:#ff0000;
+        color:#5C307F;
     }
     .logo-2{
-        color:#00ff00;
+        color:#BEC100;
     }
     .logo-3{
-        color:#0000ff;
+        color:#FF8100;
     }
 }
 
@@ -60,7 +60,11 @@ nav{
         margin-left:20px;
         margin-right:20px;
         
-        a{
+        a,button{
+            border:0;
+            background:none;
+            cursor:pointer;
+            outline:none;
             color:#000;
             font-size:14px;
             text-decoration:none;
