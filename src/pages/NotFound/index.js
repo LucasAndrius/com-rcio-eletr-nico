@@ -1,14 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Container } from './styled';
 
 
 const Page = () => {
     return (
-        <div>
-            <h1>Página não encontrada</h1>
-
-            <Link to="/">Voltar a página home</Link>
-        </div>
+        
+        <Container>
+        <Link to="/" className="link">Votar a Home
+            <div>
+                NotFound<span>404</span>
+            </div>
+        </Link>
+        </Container>
     );
 }
 
