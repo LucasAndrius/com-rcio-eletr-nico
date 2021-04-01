@@ -98,3 +98,27 @@ margin-top:20px;
 }
 
 `;
+
+export const OthersArea = styled.div`
+h2{
+    font-size:20px;
+}
+.list{
+    display:flex;
+
+    .adItem{
+        width:25%;
+    }
+}
+`;
+
+export const BreadChumb = styled.div`
+font-size:13px;
+margin-top:1rem;
+a{
+    display:inline-block;
+    margin:0 5px;
+    text-decoration:underline;
+    color:#111;
+}
+`;
