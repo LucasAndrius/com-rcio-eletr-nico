@@ -105,6 +105,7 @@ h2{
 }
 .list{
     display:flex;
+    flex-wrap:wrap;
 
     .adItem{
         width:25%;
