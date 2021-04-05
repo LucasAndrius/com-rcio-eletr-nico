@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import MaskedInput from 'react-text-mask';
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import {PageArea} from './styled';
 
 import useApi from '../../helpers/OlxAPI';
-import { doLogin } from '../../helpers/AuthHandler';
 
 import {PageContainer, PageTitle, ErrorMessage } from '../../components/MainComponents';
 
@@ -13,8 +14,10 @@ const Page = () =>{
 
     const fileField = useRef();
 
+    const [categories,setCategories] = useState([]); //lista
+
     const [title, setTitle] = useState('');
-    const [category,setCategory] = useState('');
+    const [category,setCategory] = useState(''); //selecionada
     const [price, setPrice] = useState('');
     const [priceNegotiable, setPriceNegotiable] = useState(false);
     const [desc, setDesc] = useState('');
@@ -22,6 +25,14 @@ const Page = () =>{
 
     const [disabled, setDesabled] = useState(false);
     const [ error, setError] = useState('');
+
+    useEffect(()=>{
+        const getCategories = async () =>{
+            const cats = await api.getCategories();
+            setCategories(cats);
+        }
+        getCategories();
+    },[]);
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -40,8 +51,9 @@ const Page = () =>{
         
         setDesabled(false);
        
-       
     }
+
+    
 
     return(
         <PageContainer>
@@ -67,8 +79,17 @@ const Page = () =>{
                     <label className="area">
                         <div className="area--title">Categoria</div>
                         <div className="area--input">
-                           <select>
-
+                           <select
+                                disabled={disabled}
+                                onChange={e=>setCategory(e.target.value)}
+                                required={true}
+                           >
+                               <option></option>
+                               {categories && categories.map(i=>
+                                    <option key={i._id} value={i._id}>
+                                        {i.name}
+                                    </option>
+                                )}
                            </select>
                         </div>
                     </label>
