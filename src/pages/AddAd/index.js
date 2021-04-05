@@ -53,7 +53,13 @@ const Page = () =>{
        
     }
 
-    
+    const priceMask = createNumberMask({
+        prefix:'R$' ,
+        includeThousandsSeparator:true,
+        thousandsSeparatorSymbol:'.',
+        allowDecimal:true,
+        decimalSymbol:',',
+    })
 
     return(
         <PageContainer>
@@ -96,7 +102,13 @@ const Page = () =>{
                     <label className="area">
                         <div className="area--title">Preço</div>
                         <div>
-                            .....
+                            <MaskedInput
+                                mask={priceMask}
+                                placeholder="R$"
+                                disabled={disabled || priceNegotiable}
+                                value={price}
+                                onChange={e=>setPrice(e.target.value)}
+                            />
                         </div>
                     </label>
                     <label className="area">
