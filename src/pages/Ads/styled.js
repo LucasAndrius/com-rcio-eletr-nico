@@ -63,6 +63,7 @@ margin-top:20px;
         h2{
             margin-top:0;
             font-size:18px;
+
         }
 
         .listWarning{
@@ -70,7 +71,7 @@ margin-top:20px;
             text-align:center;
         }
 
-        .list{
+        .list {
             display:flex;
             flex-wrap:wrap;
 
@@ -83,23 +84,29 @@ margin-top:20px;
             display:flex;
             align-items:center;
             justify-content:center;
-            margin:10px 0;
-
-        }
-        .pagItem{
-            width:30px;
-            height:30px;
-            border:1px solid #111;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:1rem;
-            margin-right:5px;
-
-            &:hover{
-                background-color:#9bb83c;
-                color:#fff;
+            flex-wrap:wrap;
+            .pagItem {
+                height:30px;
+                width:30px;
+                border:1px solid #000;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:14px;
+                cursor:pointer;
                 
+                &:hover{
+                    background-color:#9dd83c;
+                    color:#fff;
+                    border:1px solid #999;
+                }
+    
+                &.active{
+                    background-color:#9dd83c;
+                    color:#fff;
+                    border:1px solid #999;
+    
+                }
             }
         }
     }

@@ -5,7 +5,8 @@ import { FooterArea } from './styled';
 const Footer =  () => {
     return (
       <FooterArea>
-
+          Inspirado na OLX ;)<br/>
+          Desenvolvidor por Lucas A.Oliveira
       </FooterArea>
     );
 }
