@@ -23,9 +23,11 @@ const Page = () =>{
     const [cat, setCat] = useState(query.get('cat') !=null ? query.get('cat') : '' );
     const [state, setState] = useState(query.get('state') !=null ? query.get('state') : '' );
 
+    const [adsTotal,setAdsTotal] = useState(0);
     const [stateList, setStateList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [adList, setAdList] = useState([]);
+    const [pageCount,setPageCount] = useState(0);
 
     const [resultOpacity, setResultOpacity] = useState(1);
     const [loading, setLoading] = useState(true); 
@@ -40,9 +42,18 @@ const Page = () =>{
             state
         });
         setAdList(json.ads);
+        setAdsTotal(json.total);
         setResultOpacity(1);
         setLoading(false);
     }
+
+    useEffect(()=>{
+        if(adList.length > 0){
+            setPageCount( Math.ceil(adsTotal / adList.length) );
+        } else {
+            setPageCount(0);
+        }
+    },[adsTotal]);
 
     useEffect(()=>{
 
@@ -139,6 +150,9 @@ const Page = () =>{
                             {adList.map((i,k)=>
                                 <AdItem key={k} data={i}/>
                             )}
+                        </div>
+                        <div className="pagination">
+                            Count: {pageCount}
                         </div>
                     </div>
                 </PageArea>
