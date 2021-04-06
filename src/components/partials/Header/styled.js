@@ -89,5 +89,24 @@ nav{
     }
 }
 
+@media (max-width:600px){
+height:auto;
+    .container{
+        flex-direction:column;
+    }
+    .logo{
+        justify-content:center;
+        margin:1rem 0;
+    }
+
+    nav ul {
+        align-items:center;
+        flex-direction:column;
+        height:auto;
+    }
+    nav li{
+        margin:10px 20px;
+    }
+}
 
 `;

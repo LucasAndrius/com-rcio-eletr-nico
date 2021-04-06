@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Fake = styled.div`
+
     background-color:#ddd;
     height:${props=>props.height || 20}px;
 `;
@@ -97,9 +98,46 @@ margin-top:20px;
 
 }
 
+
+
+@media (max-width:600px){
+    
+margin:10px;
+flex-direction:column;
+
+    .leftSide{
+        margin:0;
+
+        .box{
+            width:320px;
+            margin:auto;
+            flex-direction:column;
+        }
+
+        .adInfo{
+            padding:10px;
+        }
+    }
+
+    .rightSide{
+        width:auto;
+        margin-top:1.3rem;
+
+        .box{
+            width:300px;
+            margin:auto;
+        }
+
+        .contactSellerLink{
+            width:320px;
+            margin:1.1rem auto;
+        }
+    }
+}
 `;
 
 export const OthersArea = styled.div`
+
 h2{
     font-size:20px;
 }
@@ -109,6 +147,16 @@ h2{
 
     .adItem{
         width:25%;
+    }
+}
+
+
+@media (max-width:600px){
+    
+    margin:10px;
+
+    .list .adItem{
+        width:50%;
     }
 }
 `;
@@ -121,5 +169,11 @@ a{
     margin:0 5px;
     text-decoration:underline;
     color:#111;
+}
+
+
+@media (max-width:600px){
+    
+    margin:20px;
 }
 `;

@@ -77,6 +77,35 @@ padding:20px 0;
     }
 }
 
+@media (max-width:600px){
+    .searchBox form{
+        flex-direction:column;
+
+        input{
+            padding:10px;
+            margin-right:0;
+            margin-bottom:10px;
+            text-align:center;
+        }
+
+        select{
+            width:100%;
+            margin-bottom:10px;
+        }
+
+        button{
+            height:40px;
+        }
+    }
+
+    .categoryList .categoryItem{
+       width:50%;
+       justify-content:flex-start;
+       padding:10px;
+    }
+}
+
+
 `;
 
 export const PageArea = styled.div`
@@ -101,5 +130,15 @@ h2{
     margin-top:0.625rem;
 }
 
+
+
+@media (max-width:600px){
+
+margin:10px;
+
+    .list .adItem{
+        width:50%;
+    }
+}
 
 `;

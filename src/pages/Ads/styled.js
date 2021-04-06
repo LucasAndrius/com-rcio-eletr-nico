@@ -112,4 +112,29 @@ margin-top:20px;
     }
 
     
+@media (max-width:600px){
+flex-direction:column; 
+
+    .leftSide{
+        width:auto;
+        margin:1rem;
+    }
+
+    ul{
+        display:flex;
+        flex-wrap:wrap;
+
+        li{
+            width:50%;
+        }
+    }
+
+    .rightSide{
+        margin:1rem;
+
+        .list .adItem{
+            width:50%;
+        }
+    }
+}
 `;
