@@ -59,6 +59,20 @@ margin-top:20px;
     }
     .rightSide{
         flex:1;
+
+        h2{
+            margin-top:0;
+            font-size:18px;
+        }
+
+        .list{
+            display:flex;
+            flex-wrap:wrap;
+
+            .adItem{
+                width:33%;
+            }
+        }
     }
 
     
