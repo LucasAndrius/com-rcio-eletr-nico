@@ -78,6 +78,30 @@ margin-top:20px;
                 width:33%;
             }
         }
+
+        .pagination{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:10px 0;
+
+        }
+        .pagItem{
+            width:30px;
+            height:30px;
+            border:1px solid #111;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:1rem;
+            margin-right:5px;
+
+            &:hover{
+                background-color:#9bb83c;
+                color:#fff;
+                
+            }
+        }
     }
 
     

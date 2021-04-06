@@ -96,8 +96,11 @@ const Page = () =>{
         getCategories();
     },[]);
 
+    let pagination = [];
 
-    
+    for(let i = 1; i <= pageCount; i++){
+        pagination.push(i);
+    }
 
     return(
        
@@ -152,7 +155,9 @@ const Page = () =>{
                             )}
                         </div>
                         <div className="pagination">
-                            Count: {pageCount}
+                            {pagination.map((i,k)=>
+                                <div className="pagItem">{i}</div>
+                            )}
                         </div>
                     </div>
                 </PageArea>
